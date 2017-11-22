@@ -1,0 +1,18 @@
+<h1>All Micropost</h1>
+
+<%= will_paginate %>
+
+<ul>
+  <% @microposts.each do |post| %>
+    <li>
+      <%= post.content %>
+      <% if logged_in? %>
+        <%= post.user_id %>
+        <% else %>
+        <p>You must be logged in to see author</p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
